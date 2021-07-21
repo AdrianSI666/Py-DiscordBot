@@ -18,19 +18,12 @@ token = read_token()
 
 client = commands.Bot(command_prefix='.')
 
-folder = ['divinity', 'memy', 'me', 'me2', 'illaoi', 'lol', 'poppy', 'wrex', 'benezia']
+folder = ['divinity', 'memy']
 pliki = []
 aliasy = []
 zajety = 0
 podpiety = 0
 usuniecia = 10
-
-
-# melodie = ['divinity/hes dangerous we should kill him prince.mp3',
-#            'divinity/monkey noises.mp3',
-#            'divinity/oh how good ure would u like a treat.mp3',
-#            'divinity/they found u monkey woman.mp3',
-#            'divinity/yeeeeees.mp3']
 
 
 @client.event
@@ -62,13 +55,6 @@ def switch_melodia(folders, melodia):
                 if melodia == aliasy[i][j]:
                     wyjscie = folder[i] + '/' + pliki[i][j]
     return wyjscie
-    # return {
-    #     aliasy[0]: folder[0]+'/' + divinity[0],
-    #     aliasy[1]: folder[0]+'/' + divinity[1],
-    #     aliasy[2]: folder[0]+'/' + divinity[2],
-    #     aliasy[3]: folder[0]+'/' + divinity[3],
-    #     aliasy[4]: folder[0]+'/' + divinity[4]
-    # }.get(folder, 'brak')
 
 
 async def play(ctx, s):
@@ -176,7 +162,6 @@ async def say(ctx, opcja=None, opcja2=None):
                             else:
                                 await ctx.send("Nie jesteś na kanale głosowym")
                 else:
-                    # opcja2=re.sub('[^A-Za-z0-9]+', '', opcja2[:6])
                     for i in range(0, len(folder)):
                         if opcja == folder[i]:
                             if ctx.author.voice:
